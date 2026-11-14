@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#142b23"><meta name="description" content="Your pocket map for Vans Warped Tour Orlando 2026. Find yourself, save the official festival map offline, and share it with your crew.">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Warped Map">
+<meta property="og:title" content="Warped Orlando 2026 · Pocket Map"><meta property="og:description" content="The official festival map, your location, and one less thing between you and the next set."><meta property="og:type" content="website">
+<title>Warped Orlando 2026 · Pocket Map</title>
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./assets/icon-192.png" type="image/png"><link rel="apple-touch-icon" href="./assets/icon-180.png">
+<link rel="stylesheet" href="./assets/leaflet.css"><link rel="stylesheet" href="./styles.css">
+<script src="./assets/leaflet.js" defer></script><script type="module" src="./app.js"></script>
+</head>
+<body>
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-locate" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></symbol>
+<symbol id="i-install" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2Zm6-2v16m6-14v16"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+</defs></svg>
+<div class="app-shell">
+<aside class="sidebar">
+<header class="brand"><a href="./" aria-label="Warped Orlando map home" class="brand-mark">W<span>↗</span></a><div class="brand-type">WARPED<span>POCKET MAP / 2026</span></div><span class="edition">ORL</span></header>
+<div class="sidebar-body">
+<div class="event-tag"><span></span> NOVEMBER 14–15, 2026</div>
+<h1>Less wandering.<br> More <em>Warped.</em></h1>
+<p class="intro">Your crew. Your next set.<br>The whole festival in your pocket.</p>
+<div class="venue"><svg><use href="#i-pin"/></svg><div><strong>Orlando, Florida</strong><span>Camping World Stadium Campus</span></div></div>
+<section class="location-card" aria-labelledby="location-title">
+<div class="card-eyebrow"><span class="signal-dot" id="signal-dot"></span> YOUR LOCATION <span id="gps-label">GPS OFF</span></div>
+<h2 id="location-title">Find your place.</h2><p id="location-detail" role="status" aria-live="polite">Tap below to find yourself. GPS is used on this device; Street map loads OpenStreetMap tiles.</p>
+<button class="primary" id="locate"><svg><use href="#i-locate"/></svg><span id="locate-label">Locate me</span><svg class="button-arrow"><use href="#i-arrow"/></svg></button>
+<button class="stop-location" id="stop-location" hidden>Stop using my location</button>
+</section>
+<div class="map-notice"><svg><use href="#i-info"/></svg><p><strong>A festival map, with a little perspective.</strong> The artwork is illustrated. Your dot is approximate; switch to Street map to check your geographic position.</p></div>
+<div class="sidebar-bottom"><div class="offline-status" id="offline-status" role="status"><span class="tiny-dot"></span><span id="offline-label">Preparing offline map…</span></div><a href="https://www.vanswarpedtourorlando.com/hoursandinfo" target="_blank" rel="noopener noreferrer">Official festival info <span>↗</span></a><p>Made for the pit. Unofficial fan companion.</p></div>
+</div>
+<footer class="sidebar-actions"><button id="share"><svg><use href="#i-share"/></svg>Share map</button><button id="install"><svg><use href="#i-install"/></svg>Install app</button></footer>
+</aside>
+<main class="map-panel">
+<div class="map-toolbar"><div class="view-tabs" role="group" aria-label="Map view"><button id="art-tab" class="selected" aria-pressed="true"><svg><use href="#i-map"/></svg>Festival map</button><button id="street-tab" aria-pressed="false">Street map</button></div><button id="about" class="icon-button" aria-label="About this map"><svg><use href="#i-info"/></svg></button></div>
+<div class="map-stage"><div id="art-map" class="map" role="region" aria-label="Official festival map. Use plus and minus controls to zoom; arrow keys to pan." tabindex="0"></div><div id="street-map" class="map" role="region" aria-label="Geographic street map" tabindex="0" hidden></div>
+<div class="map-stamp" id="map-stamp"><span class="tiny-dot"></span> OFFICIAL 2026 ARTWORK</div>
+<div class="map-controls"><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><div></div><button id="fit" aria-label="Show whole festival map"><svg><use href="#i-map"/></svg></button><button id="center" aria-label="Center on my location"><svg><use href="#i-locate"/></svg></button></div>
+<div class="map-bottom"><span id="map-caption">PINCH TO ZOOM · DRAG TO EXPLORE</span><a id="map-download" href="./assets/festival-map.png" download="warped-orlando-2026-map.png">Save image <span>↓</span></a></div>
+</div>
+<div class="map-footer"><span><span class="location-key"></span> Your dot appears when location is on</span><span>GOOD TIMES. GREAT DIRECTIONS.*</span></div>
+</main>
+</div>
+<dialog id="info-dialog"><button class="close-dialog" aria-label="Close dialog">×</button><div id="dialog-content"></div></dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<noscript><p class="noscript">Enable JavaScript to use location and the interactive map. <a href="./assets/festival-map.png">Open the official map image.</a></p></noscript>
+</body></html>
