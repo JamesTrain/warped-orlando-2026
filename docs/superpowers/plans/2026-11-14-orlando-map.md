@@ -31,5 +31,5 @@
 ### Task 3: Review, verification and publishing
 - [x] Run Node suite, validate static paths/manifest, browser smoke checks if available.
 - [x] Fresh agent code review; repair material issues.
-- [ ] Create own repo, push and enable GitHub Pages, verify deployment and HTTPS assets. Owner created the empty repository. Local source and checks complete, but Git push and file writes return HTTP 403: connected app is not installed/authorized for the owner account. Repository access requested.
+- [ ] Create own repo, push and enable GitHub Pages, verify deployment and HTTPS assets. Owner created the repository and authorized the GitHub app. Deployment verification pending.
 - [x] Document install/use/source limits and deliver live URL.
