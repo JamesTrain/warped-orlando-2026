@@ -1,16 +1,16 @@
-# Publish this ready-to-run app
+# GitHub Pages deployment
 
-The app has been built and tested locally. It is **not yet live**: the connected GitHub integration returned 403 when asked to create a repository.
+Repository: https://github.com/JamesTrain/warped-orlando-2026  
+App: https://jamestrain.github.io/warped-orlando-2026/
 
-1. Create an empty public repository named **warped-orlando-2026** under **JamesTrain**: https://github.com/new?name=warped-orlando-2026&visibility=public . Do not initialize with a README, .gitignore or license.
-2. Send the repository URL back in this conversation. The prepared source can then be pushed and GitHub Pages enabled, provided the GitHub connection has write access to the new repository.
+The included GitHub Actions workflow publishes the `main` branch. It stages only public app files and assets; no build, API keys, or backend are required. Repository Settings → Pages → Source must be **GitHub Actions**.
 
-For manual deployment, run from the app directory:
+The first deployment requires Pages to be enabled by a repository administrator. This is equivalent to:
 
 ```sh
-git remote add origin https://github.com/JamesTrain/warped-orlando-2026.git
-git push -u origin HEAD:main
 gh api --method POST repos/JamesTrain/warped-orlando-2026/pages -f build_type=workflow
 ```
 
-If `origin` already exists, use it. You need a GitHub login authorized to write contents, workflows and Pages settings. Alternatively set Settings → Pages → Source to **GitHub Actions** in the repository and push the `main` branch. The included workflow publishes the app without a build step. Wait for the Pages deployment workflow to succeed before opening https://jamestrain.github.io/warped-orlando-2026/ .
+After editing app files or the map, increment the cache version in `sw.js`, run `npm test`, and push to `main`. Wait for the Pages workflow to succeed. Existing installed apps show an update notice; open map info (ⓘ) and tap **Load app update**.
+
+Browser verification should cover the HTTPS Pages URL and offline reload under its `/warped-orlando-2026/` path. Real phone GPS and OS installation require a phone check.

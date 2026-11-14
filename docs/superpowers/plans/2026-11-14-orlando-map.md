@@ -31,5 +31,5 @@
 ### Task 3: Review, verification and publishing
 - [x] Run Node suite, validate static paths/manifest, browser smoke checks if available.
 - [x] Fresh agent code review; repair material issues.
-- [ ] Create own repo, push and enable GitHub Pages, verify deployment and HTTPS assets. BLOCKED: connected GitHub integration rejects repository creation (GraphQL permission denied, REST HTTP 403). User asked to create empty public repo; all local work complete.
+- [ ] Create own repo, push and enable GitHub Pages, verify deployment and HTTPS assets. Owner created the empty repository; deployment verification pending.
 - [x] Document install/use/source limits and deliver live URL.
