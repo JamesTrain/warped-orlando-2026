@@ -2,7 +2,9 @@
 
 A mobile-first, installable PWA for **Vans Warped Tour Orlando, November 14–15, 2026**, at Camping World Stadium Campus.
 
-**Live app: https://jamestrain.github.io/warped-orlando-2026/**
+**Planned Pages address (not yet published): https://jamestrain.github.io/warped-orlando-2026/**
+
+Publishing is pending creation of an empty public repository in the owner’s GitHub account; the connected integration cannot create repositories.
 
 - Official festival artwork with pan, pinch/scroll zoom, fit and save-image controls.
 - Opt-in live GPS dot, reported accuracy, stale/paused states, and geographic OpenStreetMap view.
