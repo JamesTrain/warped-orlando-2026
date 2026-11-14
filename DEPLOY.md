@@ -1,5 +1,9 @@
 # GitHub Pages deployment
 
+**Publication status:** source is ready locally; GitHub denied pushes with HTTP 403 because the connected app is not authorized for this account/repository. The Pages URL is not live yet.
+
+Authorize the ChatGPT Codex Connector for JamesTrain and select this repository: https://github.com/apps/chatgpt-codex-connector/installations/new .
+
 Repository: https://github.com/JamesTrain/warped-orlando-2026  
 App: https://jamestrain.github.io/warped-orlando-2026/
 
