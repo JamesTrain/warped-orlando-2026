@@ -31,5 +31,5 @@
 ### Task 3: Review, verification and publishing
 - [x] Run Node suite, validate static paths/manifest, browser smoke checks if available.
 - [x] Fresh agent code review; repair material issues.
-- [ ] Create own repo, push and enable GitHub Pages, verify deployment and HTTPS assets. Owner created the repository and authorized the GitHub app. Deployment verification pending.
+- [x] Create own repo, push and enable GitHub Pages, verify deployment and HTTPS assets. Published successfully from cb97fdb. Live browser checks passed for GPS, sharing, offline reload, and actual OpenStreetMap tiles.
 - [x] Document install/use/source limits and deliver live URL.
